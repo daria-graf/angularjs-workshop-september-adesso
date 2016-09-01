@@ -7,3 +7,8 @@
 </div>
 
 <button (click)="isHidden=!isHidden">Toggle</button>
+
+<div style="height: 400px; width: 400px; border: 1px solid"
+     (mousemove)="onMousemove($event)"></div>
+
+<p>X: {{x}}, Y: {{y}}</p>
