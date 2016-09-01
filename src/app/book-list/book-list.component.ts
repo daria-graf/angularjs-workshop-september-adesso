@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'book-list',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
   @Input() title: string;
+  @Output() titleClicked = new EventEmitter<string>();
   isHidden: boolean;
   x: number;
   y: number;
@@ -20,7 +21,10 @@ export class BookListComponent implements OnInit {
     this.y = offsetY;
   }
 
-  ngOnInit() {
+  sendTitleClicked() {
+    this.titleClicked.emit('Event fired!')
   }
 
+  ngOnInit() {
+  }
 }

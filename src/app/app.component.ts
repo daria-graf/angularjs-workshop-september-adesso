@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'app works!';
+
+  fn($event: string) {
+    alert($event);
+  }
 }

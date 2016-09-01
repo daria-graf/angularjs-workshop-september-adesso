@@ -2,4 +2,4 @@
   {{title}}
 </h1>
 
-<book-list [title]="title"></book-list>
+<book-list [title]="title" (titleClicked)="fn($event)"></book-list>
