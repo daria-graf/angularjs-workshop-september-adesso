@@ -1,7 +1,8 @@
 <h3 (click)="sendTitleClicked()">{{title}}</h3>
 
 <div *ngFor="let book of books">
-  {{book.title}}
+
+  <a [routerLink]="['/books', book.isbn]">{{book.title}}</a>
 </div>
 
 <div [hidden]="isHidden">
