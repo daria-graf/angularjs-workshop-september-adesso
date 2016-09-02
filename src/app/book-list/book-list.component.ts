@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Book } from '../shared/book';
 import { BookDataService } from '../shared/book-data.service';
 
 @Component({
   selector: 'book-list',
   templateUrl: './book-list.component.html',
-  styleUrls: ['./book-list.component.css'],
-  providers: [BookDataService]
+  styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
   @Input() title: string;
@@ -13,7 +13,7 @@ export class BookListComponent implements OnInit {
   isHidden: boolean;
   x: number;
   y: number;
-  books: any[] = []
+  books: Book[] = [];
 
   constructor(private bookData: BookDataService) {
     this.isHidden = true;

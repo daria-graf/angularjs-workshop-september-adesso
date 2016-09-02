@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Book } from './book';
 
 @Injectable()
 export class BookDataService {
-  books: any[] = [
+  books: Book[] = [
   {
     "title": "Design Patterns",
     "subtitle": "Elements of Reusable Object-Oriented Software",
@@ -43,7 +44,7 @@ export class BookDataService {
 
   constructor() { }
 
-  getBooks() {
+  getBooks(): Book[] {
     return this.books;
   }
 }
