@@ -1,8 +1,8 @@
 <h3 (click)="sendTitleClicked()">{{title}}</h3>
 
-<p>
-  book-list works!
-</p>
+<div *ngFor="let book of books">
+  {{book.title}}
+</div>
 
 <div [hidden]="isHidden">
   Box
