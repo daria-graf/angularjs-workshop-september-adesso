@@ -13,11 +13,13 @@ export class BookListComponent implements OnInit {
   isHidden: boolean;
   x: number;
   y: number;
-  books: Book[] = [];
+  books: Book[];
 
   constructor(private bookData: BookDataService) {
     this.isHidden = true;
-    this.books = bookData.getBooks();
+    bookData.getBooks().subscribe((books) => {
+      this.books = books;
+    });
   }
 
   onMousemove({offsetX, offsetY}: MouseEvent) {
